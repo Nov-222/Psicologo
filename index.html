@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Psicólogo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <nav>
+        <button onclick="mostrarSeccion('registro-section')">Registrar Cita</button>
+        <button onclick="mostrarSeccion('cancelar-cliente-section')">Cancelar (Cliente)</button>
+        <button onclick="mostrarSeccion('tablero-section')">Ver Tablero (Dashboard)</button>
+    </nav>
+
+    <div id="contenedor-principal">
+
+        <!-- HU-01: Registro de cita -->
+        <section id="registro-section" class="form-container">
+            <h2>Registro de Cita</h2>
+            <form id="form-registro">
+                <input type="text" id="nombre" placeholder="Nombre Completo" required>
+                <input type="text" id="carnet" placeholder="Carnet" required>
+                <input type="date" id="fecha" required>
+                <select id="horario" required>
+                    <option value="">Seleccionar Horario</option>
+                </select>
+                <input type="tel" id="celular" placeholder="Número de Celular" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <button type="submit">Registrar Cita</button>
+            </form>
+        </section>
+
+        <!-- HU-03: Cancelar cita por cliente -->
+        <section id="cancelar-cliente-section" class="form-container" style="display:none;">
+            <h2>Cancelar Cita (Cliente)</h2>
+            <form id="form-cancelar-cliente">
+                <input type="text" id="cancel-carnet" placeholder="Tu Carnet" required>
+                <input type="date" id="cancel-fecha" required>
+                <input type="text" id="cancel-horario" placeholder="Horario (ej: 8-9)" required>
+                <button type="submit">Cancelar Cita</button>
+            </form>
+        </section>
+
+        <!-- HU-02: Tablero semanal -->
+        <section id="tablero-section" style="display:none;">
+            <div class="nav-semana">
+                <button id="prev-week">← Anterior Semana</button>
+                <span id="fecha-actual-rango">Cargando fechas...</span>
+                <button id="next-week">Siguiente Semana →</button>
+            </div>
+            <table id="calendario">
+                <thead>
+                    <tr>
+                        <th>Hora</th>
+                        <th>Lunes</th>
+                        <th>Martes</th>
+                        <th>Miércoles</th>
+                        <th>Jueves</th>
+                        <th>Viernes</th>
+                    </tr>
+                </thead>
+                <tbody id="calendario-body"></tbody>
+            </table>
+        </section>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="main.js"></script>
+</body>
+</html>

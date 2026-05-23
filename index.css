@@ -1,0 +1,200 @@
+/* =============================================
+   ESTILOS BASE
+   ============================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =============================================
+   NAVEGACIÓN
+   ============================================= */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    background-color: #333;
+    padding: 12px;
+    border-radius: 12px;
+}
+
+nav button {
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid #555;
+    background-color: #FFCCCC;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    width: auto;
+    margin: 0;
+    transition: background-color 0.2s;
+}
+
+nav button:hover {
+    background-color: #FF8F8F;
+}
+
+/* =============================================
+   FORMULARIOS
+   ============================================= */
+.form-container {
+    background-color: #FF8F8F;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    width: 95%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.form-container h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+input,
+select,
+.form-container button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px; /* Evita zoom automático en iPhone */
+}
+
+.form-container button[type="submit"] {
+    background-color: #FFCCCC;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.form-container button[type="submit"]:hover {
+    background-color: #ff9999;
+}
+
+/* =============================================
+   TABLERO / DASHBOARD
+   ============================================= */
+#tablero-section {
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+}
+
+.nav-semana {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-semana button {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #FFCCCC;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.nav-semana button:hover {
+    background-color: #FF8F8F;
+}
+
+#fecha-actual-rango {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* =============================================
+   TABLA CALENDARIO
+   ============================================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #FFC0CB;
+    min-width: 600px;
+}
+
+th, td {
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+    width: 18%;
+    min-height: 60px;
+}
+
+th {
+    background-color: #ff9aad;
+}
+
+/* =============================================
+   CITAS
+   ============================================= */
+.cita-box {
+    background-color: #00FFFF;
+    border-radius: 8px;
+    padding: 8px;
+    font-size: 13px;
+    border: 1px solid #00cccc;
+    margin: 2px;
+}
+
+/* HU-05: Cita cancelada en curso — borde rojo */
+.cita-en-curso-cancelada {
+    border: 3px solid red !important;
+    background-color: #ccc !important;
+}
+
+.cita-cancelada {
+    background-color: #ccc !important;
+    color: #666;
+}
+
+.btn-repro {
+    background-color: #FFA500;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 2px 1px 0;
+    font-size: 13px;
+}
+
+.btn-cancel-psi {
+    background-color: #FF4444;
+    width: 30px;
+    height: 28px;
+    display: inline-block;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin: 2px 1px 0;
+    font-size: 13px;
+}
+
+.btn-repro:hover { background-color: #e69500; }
+.btn-cancel-psi:hover { background-color: #cc0000; }
