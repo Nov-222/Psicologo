@@ -188,17 +188,18 @@ async function cancelarPsi(id, f, h) {
 
     if (f === hoy && ahora.getHours() >= hInicio) {
         alert("La cita está en curso — se marcará con borde rojo.");
-        await _supabase
-            .from('citas')
-            .update({ estado: 'cancelada_en_curso' })
-            .eq('id', id);
+        await ActualizarEstadoCita('cancelada_en_curso', id)
     } else {
-        await _supabase
-            .from('citas')
-            .update({ estado: 'cancelada' })
-            .eq('id', id);
+        await ActualizarEstadoCita('cancelada', id)
     }
     renderizarTablero();
+}
+
+async function ActualizarEstadoCita(estadocita, Idcita){
+    await _supabase
+            .from('citas')
+            .update({ estado: estadocita })
+            .eq('id', Idcita);
 }
 
 /* ── Utilidad: navegación entre secciones ── */
